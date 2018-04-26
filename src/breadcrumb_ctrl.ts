@@ -141,7 +141,9 @@ class BreadcrumbCtrl extends PanelCtrl {
              sessionStorage.setItem("dashlist", JSON.stringify(this.dashboardList));
              // Parse modified breadcrumb and set it to url query params
              const parsedBreadcrumb = this.parseBreadcrumbForUrl();
-             this.windowLocation.search({ breadcrumb: parsedBreadcrumb }).replace();
+             const params = this.parseParamsObject(queryParams);
+             params.breadcrumb = parsedBreadcrumb;
+             this.windowLocation.search(params);
          });
      }
 
