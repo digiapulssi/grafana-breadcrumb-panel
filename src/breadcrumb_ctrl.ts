@@ -143,7 +143,7 @@ class BreadcrumbCtrl extends PanelCtrl {
              const parsedBreadcrumb = this.parseBreadcrumbForUrl();
              const params = this.parseParamsObject(queryParams);
              params.breadcrumb = parsedBreadcrumb;
-             this.windowLocation.search(queryParams);
+             this.windowLocation.search(params);
          });
      }
 
